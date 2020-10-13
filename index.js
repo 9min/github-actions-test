@@ -1,8 +1,9 @@
-const Slack = require("slack-node"); // 슬랙 모듈 사용
+require("dotenv").config();
+
+const Slack = require("slack-node");
 const fs = require("fs");
 
-const webhookUri =
-  "https://hooks.slack.com/services/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"; // Webhook URL
+const webhookUri = process.env.SLACK_WEBHOOK_URL;
 
 const slack = new Slack();
 slack.setWebhook(webhookUri);
