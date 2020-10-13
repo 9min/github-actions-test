@@ -5,13 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,5 +30,7 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
         if: always() # Pick up events even if the job fails or is canceled.
-      - run: npm install
-      - run: npm run start
+      - name: npm install
+        run: npm install
+      - name: npm install
+        run: npm run start
