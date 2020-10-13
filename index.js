@@ -14,6 +14,8 @@ const send = async (isSuccess, message) => {
     text: `${prefix} ${message}`,
   };
 
+  console.log(message);
+
   if (!isSuccess) {
     format.attachments = [
       {
